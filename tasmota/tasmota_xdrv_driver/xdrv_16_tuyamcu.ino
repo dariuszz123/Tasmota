@@ -80,7 +80,7 @@ struct TUYA {
 #endif // USE_ENERGY_SENSOR
   char *buffer = nullptr;                 // Serial receive buffer
   int byte_counter = 0;                   // Index in serial receive buffer
-  bool low_power_mode = false;            // Normal or Low power mode protocol
+  bool low_power_mode = true;            // Normal or Low power mode protocol
   bool send_success_next_second = false;  // Second command success in low power mode
   uint32_t ignore_dimmer_cmd_timeout = 0; // Time until which received dimmer commands should be ignored
   bool ignore_tuyareceived = false;       // When a modeset changes ignore stat
@@ -1361,7 +1361,7 @@ uint8_t TuyaGetTuyaWifiState(void) {
   uint8_t wifi_state = 0x02;
   switch(WifiState()){
     case WIFI_MANAGER:
-      wifi_state = 0x04;
+      wifi_state = 0x01;
       break;
     case WIFI_RESTART:
       wifi_state =  0x03;
