@@ -1358,7 +1358,7 @@ bool TuyaButtonPressed(void)
 
 uint8_t TuyaGetTuyaWifiState(void) {
 
-  uint8_t wifi_state = 0x02;
+  uint8_t wifi_state = 0x04;
   switch(WifiState()){
     case WIFI_MANAGER:
       wifi_state = 0x01;
