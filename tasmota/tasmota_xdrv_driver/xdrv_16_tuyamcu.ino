@@ -1324,8 +1324,10 @@ void TuyaSerialInput(void)
       }
 
       if (!Tuya.low_power_mode) {
+        AddLog(LOG_LEVEL_INFO, PSTR("TYA: Normal process"));
         TuyaNormalPowerModePacketProcess();
       } else {
+        AddLog(LOG_LEVEL_INFO, PSTR("TYA: LOW PROCESS"));
         TuyaLowPowerModePacketProcess();
       }
 
@@ -1373,7 +1375,7 @@ uint8_t TuyaGetTuyaWifiState(void) {
     wifi_state = 0x03;
   }
 
-  AddLog(LOG_LEVEL_DEBUG, PSTR("TYA: TuyaGetTuyaWifiState = %d"), wifi_state);
+  //AddLog(LOG_LEVEL_DEBUG, PSTR("TYA: TuyaGetTuyaWifiState = %d"), wifi_state);
   
   return wifi_state;
 }
