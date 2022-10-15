@@ -1358,19 +1358,19 @@ bool TuyaButtonPressed(void)
 
 uint8_t TuyaGetTuyaWifiState(void) {
 
-  uint8_t wifi_state = 0x04;
+  uint8_t wifi_state = 0x03;
 
   switch(WifiState()){
     case WIFI_MANAGER:
       wifi_state = 0x01;
       break;
     case WIFI_RESTART:
-      wifi_state =  0x04;
+      wifi_state =  0x03;
       break;
   }
 
   if (MqttIsConnected()) {
-    wifi_state = 0x04;
+    wifi_state = 0x03;
   }
 
   AddLog(LOG_LEVEL_DEBUG, PSTR("TYA: TuyaGetTuyaWifiState = %d"), wifi_state);
