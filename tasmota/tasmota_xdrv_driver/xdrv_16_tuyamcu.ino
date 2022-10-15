@@ -1027,6 +1027,7 @@ void TuyaLowPowerModePacketProcess(void) {
     case TUYA_CMD_QUERY_PRODUCT:
       TuyaHandleProductInfoPacket();
       TuyaSetWifiLed();
+      TuyaRequestState(8);
       break;
 
     case TUYA_LOW_POWER_CMD_STATE:
