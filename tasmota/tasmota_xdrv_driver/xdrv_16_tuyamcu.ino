@@ -1358,13 +1358,14 @@ bool TuyaButtonPressed(void)
 
 uint8_t TuyaGetTuyaWifiState(void) {
 
-  uint8_t wifi_state = 0x02;
+  uint8_t wifi_state = 0x04;
+
   switch(WifiState()){
     case WIFI_MANAGER:
       wifi_state = 0x01;
       break;
     case WIFI_RESTART:
-      wifi_state =  0x03;
+      wifi_state =  0x02;
       break;
   }
 
@@ -1372,6 +1373,8 @@ uint8_t TuyaGetTuyaWifiState(void) {
     wifi_state = 0x04;
   }
 
+  AddLog(LOG_LEVEL_DEBUG, PSTR("TYA: TuyaGetTuyaWifiState = %d"), wifi_state);
+  
   return wifi_state;
 }
 
