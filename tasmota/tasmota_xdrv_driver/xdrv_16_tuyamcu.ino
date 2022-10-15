@@ -1365,7 +1365,7 @@ uint8_t TuyaGetTuyaWifiState(void) {
       wifi_state = 0x01;
       break;
     case WIFI_RESTART:
-      wifi_state =  0x02;
+      wifi_state =  0x04;
       break;
   }
 
