@@ -1148,11 +1148,11 @@ bool TuyaModuleSelected(void) {
     }
   }
 
-  if (!relaySet && TuyaGetDpId(TUYA_MCU_FUNC_DUMMY) == 0) { //by default the first relay is created automatically the dummy let remove it if not needed
-    TuyaAddMcuFunc(TUYA_MCU_FUNC_REL1, 1);
-    TasmotaGlobal.devices_present++;
-    SettingsSaveAll();
-  }
+  //if (!relaySet && TuyaGetDpId(TUYA_MCU_FUNC_DUMMY) == 0) { //by default the first relay is created automatically the dummy let remove it if not needed
+  //  TuyaAddMcuFunc(TUYA_MCU_FUNC_REL1, 1);
+  //  TasmotaGlobal.devices_present++;
+  //  SettingsSaveAll();
+  //}
 
   // Possible combinations for Lights:
   // 0: NONE = LT_BASIC
